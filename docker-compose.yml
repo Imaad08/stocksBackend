@@ -1,10 +1,10 @@
 version: '3'
 services:
         web:
-                image: flask_port_v1
+                image: stocks_backend # Change the image name to something unique to your project, aka my_unique_name_v1
                 build: .
                 ports:
-                        - "8086:8086"
+                        - "8484:8080" # Edit the number on the left to match the port you selected
                 volumes:
                         - ./volumes:/volumes
                         - ./instance:/instance
