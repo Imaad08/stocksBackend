@@ -1,0 +1,25 @@
+<!-- Extending the project layout, as this file will do minor customizations -->
+{% extends "layouts/project.html" %}
+
+<!-- Setting up variables to customize "project" details to be specific to kangaroos -->
+{% set project = "Kangaroos" %}
+{% set overview = "https://www.youtube.com/watch?v=qXU-4Dwkv2E" %}
+{% set scrumboard = "https://www.youtube.com/channel/UClIKOsDS5dsfzFA3zveDT3Q?view_as=subscriber" %}
+{% set repo = "https://github.com/avabrooks/Python-Web-Portfolio-Series-Demo" %}
+{% set authors = "https://thesmack.nighthawkcodingsociety.com/digitalPortfolios/"  %}
+
+<!-- Setting up a block replacement to customize background to RINGS -->
+{% block background %}
+    <script src="{{ url_for('static', filename='js/three.r119.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/vanta.halo.min.js') }}"></script>
+    <script>
+        VANTA.HALO({
+            el: "body",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00
+        })
+    </script>
+{% endblock %}

@@ -1,0 +1,27 @@
+<!-- Extending the project layout, as this file will do minor customizations -->
+{% extends "layouts/project.html" %}
+
+<!-- Setting up variables to customize "project" details to be specific to hawkers -->
+{% set project = "Hawkers" %}
+{% set overview = "https://hawkers.nighthawkcodingsociety.com/aboutus" %}
+{% set scrumboard = "https://github.com/noyah81/p2ducks/projects/1" %}
+{% set repo = "https://github.com/noyah81/p2ducks" %}
+{% set authors = "https://nighthawkcodingsociety.com/projectsearch/details/Hawkers%20Tweet" %}
+
+<!-- Setting up a block replacement to customize background to BIRDS -->
+{% block background %}
+    <script src="{{ url_for('static', filename='js/three.r119.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/vanta.net.min.js') }}"></script>
+    <script>
+        VANTA.NET({
+            el: "body",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00
+        })
+    </script>
+{% endblock %}

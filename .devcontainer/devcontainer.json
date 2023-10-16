@@ -1,0 +1,29 @@
+// For format details, see https://aka.ms/vscode-remote/devcontainer.json or this file's README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.112.0/containers/typescript-node-12
+{
+  "name": "Docker from Docker example",
+  "dockerComposeFile": "docker-compose.dev-container.yml",
+  "service": "app",
+  "shutdownAction": "stopCompose",
+  // Open the sub-folder with the source code
+  "workspaceFolder": "/workspace",
+  // Make sure the required docker network and volume exist before creating containers
+  "initializeCommand": ".devcontainer/docker-init.sh",
+  // Set *default* container specific settings.json values on container create.
+  "settings": {
+    "#terminal.integrated.defaultProfile.linux#": "/bin/bash"
+  },
+  // Add the IDs of extensions you want installed when the container is created.
+  "extensions": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "ms-vsliveshare.vsliveshare",
+    "ms-azuretools.vscode-docker"
+  ],
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // Left empty because this is handled by docker-compose for individual services,
+  // use this only for additional ports not needed by those services (e.g. ssh)
+  "forwardPorts": [],
+  // Install npm packages to the shared volume before running docker-compose in the container
+  "postCreateCommand": "cd frontend && yarn install && cd ../backend && yarn install"
+}

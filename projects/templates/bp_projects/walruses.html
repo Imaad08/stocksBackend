@@ -1,0 +1,27 @@
+<!-- Extending the project layout, as this file will do minor customizations -->
+{% extends "layouts/project.html" %}
+
+<!-- Setting up variables to customize "project" details to be specific to walruses -->
+{% set project = "Walruses" %}
+{% set overview = "https://nighthawkcodingsociety.com/projectsearch/dash" %}
+{% set scrumboard = "https://github.com/ridhimainukurti/group-2/projects/1" %}
+{% set repo = "https://github.com/ridhimainukurti/group-2" %}
+{% set authors = "https://wasc.nighthawkcodingsociety.com/about"  %}
+
+<!-- Setting up a block replacement to customize background to RINGS -->
+{% block background %}
+    <script src="{{ url_for('static', filename='js/three.r119.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/vanta.rings.min.js') }}"></script>
+    <script>
+        VANTA.RINGS({
+            el: "body",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00
+        })
+    </script>
+{% endblock %}

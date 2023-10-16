@@ -1,0 +1,11 @@
+version: '3'
+services:
+        web:
+                image: flask_port_v1
+                build: .
+                ports:
+                        - "8086:8086"
+                volumes:
+                        - ./volumes:/volumes
+                        - ./instance:/instance
+                restart: unless-stopped
